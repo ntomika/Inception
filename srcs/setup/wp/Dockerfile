@@ -27,6 +27,6 @@ RUN	mkdir /run/php
 COPY	./wpress_php.sh /var/www/
 RUN	chmod 777 /var/www/wpress_php.sh
 
-
 ENTRYPOINT	["bash", "/var/www/wpress_php.sh"]
+
 CMD	["/usr/sbin/php-fpm7.3", "--nodaemonize"]
