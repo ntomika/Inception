@@ -16,6 +16,8 @@ RUN	apt-get update && \
 	php-zip \
 	vim \
 	wget \
+	curl \
+	mariadb-client \
 	&& rm -rf /var/lib/apt/lists/*
 
 

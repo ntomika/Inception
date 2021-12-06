@@ -1,10 +1,6 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 if ! [ -f "/var/www/html/wp-config.php" ]; then
-	apt-get install curl -y
-   	
-	apt-get install mariadb-client -y
-    
 	curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
   	
 	chmod +x wp-cli.phar
@@ -21,7 +17,8 @@ if ! [ -f "/var/www/html/wp-config.php" ]; then
     
 	wp user create --allow-root user user@42.fr --role=author --user_pass=111
     
-	mv * /var/www/html/
+	mv -f * /var/www/html/
+
 fi
 
 exec "$@"
