@@ -1,5 +1,7 @@
 FROM	debian:buster
 
+EXPOSE	443
+
 RUN	apt-get update && \
 	apt-get install -y \
 	nginx \

@@ -27,7 +27,7 @@ services:
   volumes:
    - db:/var/lib/mysql
   restart: always
-  build: setup/mariaDB/
+  build: setup/mariadb/
   networks:
     - inception_net
   container_name: mariadb
