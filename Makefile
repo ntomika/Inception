@@ -16,6 +16,6 @@ clean:
 	docker stop $$(docker ps -qa);\
 	docker rm $$(docker ps -qa);\
 	docker rmi -f $$(docker images -qa);\
-	docker network rm $$(docker network ls -q)
+	docker network rm $$(docker network ls -q) 2>/dev/null
 
 .PHONY:	start down re stop clean
