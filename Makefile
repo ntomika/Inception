@@ -17,7 +17,12 @@ clean:
 	docker stop $$(docker ps -qa);\
 	docker rm $$(docker ps -qa);\
 	docker rmi -f $$(docker images -qa)
+	docker volume rm $$(docker volume ls -q)
+	docker network rm inception_net
 	docker ps -a
-	docker images -a
+	docker images -i
+	docker volume ls
+	docker network ls
+
 
 .PHONY:	start down re stop clean
