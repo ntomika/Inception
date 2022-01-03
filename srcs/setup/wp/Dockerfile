@@ -21,13 +21,13 @@ RUN	apt-get update && \
 	&& rm -rf /var/lib/apt/lists/*
 
 
-COPY	./www.conf /etc/php/7.3/fpm/pool.d/
-RUN	chmod 777 /etc/php/7.3/fpm/pool.d/www.conf
+COPY	./tools/www.conf /etc/php/7.3/fpm/pool.d/
+RUN	chmod 744 /etc/php/7.3/fpm/pool.d/www.conf
 
 RUN	mkdir /run/php
 
-COPY	./wpress_php.sh /var/www/
-RUN	chmod 777 /var/www/wpress_php.sh
+COPY	./tools/wpress_php.sh /var/www/
+RUN	chmod 744 /var/www/wpress_php.sh
 
 ENTRYPOINT	["bash", "/var/www/wpress_php.sh"]
 

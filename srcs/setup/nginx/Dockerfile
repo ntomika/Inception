@@ -9,7 +9,7 @@ RUN	apt-get update && \
 	vim \
 	&& rm -rf /var/lib/apt/lists/*
 
-COPY	./nginx.conf /etc/nginx/sites-available
+COPY	./tools/nginx.conf /etc/nginx/sites-available
 RUN	ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled
 
 RUN	openssl req -x509 -nodes -days 365 \

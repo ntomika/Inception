@@ -8,10 +8,10 @@ RUN	apt-get update && \
 	vim \
 	&& rm -rf /var/lib/apt/lists/*
 
-COPY	./50-server.cnf /etc/mysql/mariadb.conf.d/
-RUN	chmod 777 /etc/mysql/mariadb.conf.d/50-server.cnf
+COPY	./tools/50-server.cnf /etc/mysql/mariadb.conf.d/
+RUN	chmod 744 /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY	init.sh /var/www/
-RUN	chmod 777 /var/www/init.sh 
+COPY	./tools/init.sh /var/www/
+RUN	chmod 744 /var/www/init.sh 
 
 ENTRYPOINT ["bash", "/var/www/init.sh"]
