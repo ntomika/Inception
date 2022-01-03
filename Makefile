@@ -17,5 +17,7 @@ clean:
 	docker stop $$(docker ps -qa);\
 	docker rm $$(docker ps -qa);\
 	docker rmi -f $$(docker images -qa)
+	docker ps -a
+	docker images -a
 
 .PHONY:	start down re stop clean
